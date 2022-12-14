@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | PrintJob</title>
+
+    <link rel="stylesheet" href="assets/login.css">
+    <script src="assets/statusbar.js"></script>
+    <script src="assets/authentication.js"></script>
+    <script>
+        function removeHttpsCheckMessage(silent) { // Added as a function to ensure it works even when in HTTP
+            document.getElementById('httpscheckdisable').style.display = 'none';
+            document.getElementById('logincontainer').style.marginTop = 0;
+            console.log("HTTPS Check Removed Programmatically...")
+        }
+
+        if (location.protocol == "https:") { // Should never happen but you never know
+            removeHttpsCheckMessage(); 
+        } 
+    </script>
+</head>
+<body>
+    
+    <div class="statusbar" id="sbcolor">
+        <p class="sbtext sbtextstrong">Status:</p>
+        <p class="sbtext" id="sbtextfield">Idle</p>
+    </div>
+
+    <div class="centerdiv">
+
+        <!--HTTPS Check Message-->
+        <div id="httpscheckdisable">
+            <div class="httpscheck">
+                <img src="https://downloads.enstrayed.com/cat/bs.jpg" alt="bullshit" height="50">
+                <p class="httpschecktext">u are not using https</p>
+            </div>
+        </div>
+
+
+        <div class="logincontainer" id="logincontainer">
+            <div class="lc-flexdown">
+                <h1>Login to PrintJob</h1>
+                <div class="lc-flexright">
+                    <p>Username:</p>
+                    <input type="text" name="Username" id="loginusername" title="Username">
+                </div>
+                <div class="lc-flexright">
+                    <p>Password:</p>
+                    <input type="password" name="Password" id="loginpassword" title="Password">
+                </div>
+                <button onclick="updateStatusBar('red','this doesnt work silly')">Login</button>
+            </div>
+        </div>
+        
+        <div class="linkrow">
+            <div class="linkrowlinks">
+                <a href="about.html">About PrintJob</a>
+                <a href="resetpassword.html">Reset Password</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

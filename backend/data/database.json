@@ -1,0 +1,29 @@
+{
+    "users":[
+        {
+            "nathan": [
+                {
+                    "fullName": "Nathan Ritchie",
+                    "role": "requester",
+                    "isAdministrator": true,
+                    "isBlockedFromLogin": false,
+                    "needsToResetPassword": false,
+                    "passwordHash": "x",
+                    "allowedAuthKeys": ["x"]
+
+                }
+            ],
+            "garrett": [
+                {
+                    "fullName": "Garrett Miles",
+                    "role": "printer",
+                    "isAdministrator": false,
+                    "isBlockedFromLogin": false,
+                    "needsToResetPassword": false,
+                    "passwordHash": "x",
+                    "allowedAuthKeys": ["x"]
+                }
+            ]
+        }
+    ]
+}

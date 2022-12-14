@@ -1,0 +1,33 @@
+Login Form:
+- Read Contents DONE
+- Hash Password DONE
+- Assemble Web Request
+- Submit to backend (need to make express project)
+
+Example Web Request for Authorization Token:
+
+GET https://printjob.enstrayed.com/api
+HEADER action AcquireAuthorizationToken
+HEADER username {form username}
+HEADER password {hashed form password}
+
+Backend:
+- Check request IP Address
+-- If failed login attempts >3 then
+--- Set timeout unlock for current unix epoch time + 300000 (5 minutes)
+--- RESPOND 420
+-- Else, proceed to Check
+
+-- Check if user is blocked from logging in
+--- if yes, RESPOND 423
+--- else, continue
+
+-- Check if user needs to reset their password
+--- If yes, RESPOND 409
+---- Client will redirect to password reset page
+--- else, continue
+
+-- If sent password hash is same as stored password hash
+--- Generate new authorization key
+--- Add to list of authorized keys
+--- RESPOND 200 with key
